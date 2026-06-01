@@ -149,5 +149,5 @@ print("\nArquivo df_limpo.csv gerado com sucesso.")
 print(f"Registros finais: {len(df)}")
 print(f"Colunas finais: {len(df.columns)}")
 
-print("\nProjeto concluído com sucesso.")
+
 
