@@ -150,6 +150,18 @@ O gráfico abaixo apresenta a quantidade de compras registradas para cada catego
 
 ![Distribuição das Compras por Categoria](grafico_categorias.png)
 
+## Distribuição das Compras por Gênero
+
+O gráfico apresenta a participação percentual das compras realizadas por cada gênero presente na base de dados.
+
+![Compras por Gênero](grafico_genero.png)
+
+## Clientes por Segmento
+
+O gráfico demonstra a distribuição dos clientes cadastrados por segmento de mercado.
+
+![Clientes por Segmento](grafico_segmento.png)
+
 ## Arquivos Gerados
 
 - df_limpo.csv

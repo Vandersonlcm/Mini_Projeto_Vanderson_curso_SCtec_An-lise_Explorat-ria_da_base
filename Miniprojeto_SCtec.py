@@ -177,6 +177,70 @@ plt.savefig(
 
 plt.show()
 
+# GRÁFICO  - COMPRAS POR GÊNERO
+
+compras_genero = (
+    df.groupby("CL_GENERO")
+      .size()
+)
+
+plt.figure(figsize=(8, 8))
+
+plt.pie(
+    compras_genero,
+    labels=compras_genero.index,
+    autopct="%1.1f%%",
+    startangle=90
+)
+
+plt.title("Distribuição das Compras por Gênero")
+
+plt.savefig(
+    "grafico_genero.png",
+    dpi=300,
+    bbox_inches="tight"
+)
+
+plt.show()
+
+# GRÁFICO - CLIENTES POR SEGMENTO
+
+clientes_segmento = (
+    df.groupby("CL_SEG")
+      .size()
+      .sort_values()
+)
+
+plt.figure(figsize=(10, 5))
+
+ax = clientes_segmento.plot(
+    kind="barh"
+)
+
+plt.title("Quantidade de Clientes por Segmento")
+plt.xlabel("Quantidade de Clientes")
+plt.ylabel("Segmento")
+
+# Exibir valores ao lado das barras
+
+for i, valor in enumerate(clientes_segmento):
+    plt.text(
+        valor,
+        i,
+        f" {valor:,}".replace(",", "."),
+        va="center"
+    )
+
+plt.tight_layout()
+
+plt.savefig(
+    "grafico_segmento.png",
+    dpi=300,
+    bbox_inches="tight"
+)
+
+plt.show()
+
 
 
 
