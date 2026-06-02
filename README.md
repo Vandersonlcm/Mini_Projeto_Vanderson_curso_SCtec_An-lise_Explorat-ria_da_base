@@ -1,4 +1,4 @@
-# Mini-Projeto Avaliativo - Análise de Dados com Python SCtec/Senai
+# Projeto Avaliativo - Análise de Dados com Python SCtec/Senai
 
 ## Aluno
 
@@ -144,12 +144,12 @@ Segmento	               Quantidade
 O Segmento B concentra aproximadamente 64% dos registros da base.
 Isso sugere que o público-alvo predominante da empresa está nessa faixa de segmentação.
 
-## Arquivos Gerados
-
-- df_limpo.csv
-
 ## Distribuição das Compras por Categoria
 
 O gráfico abaixo apresenta a quantidade de compras registradas para cada categoria de produto após o processo de limpeza dos dados.
 
 ![Distribuição das Compras por Categoria](grafico_categorias.png)
+
+## Arquivos Gerados
+
+- df_limpo.csv

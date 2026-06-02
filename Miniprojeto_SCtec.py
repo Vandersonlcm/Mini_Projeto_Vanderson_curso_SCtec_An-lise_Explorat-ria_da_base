@@ -21,7 +21,6 @@ for coluna in df.columns:
 print("\nTipos de dados:")
 print(df.dtypes)
 
-
 # IDENTIFICAÇÃO DE PROBLEMAS
 
 print("\nValores nulos por coluna:")
