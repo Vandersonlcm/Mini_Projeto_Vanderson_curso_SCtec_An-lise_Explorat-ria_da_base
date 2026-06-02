@@ -1,6 +1,7 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
-# SPRINT 1 - IMPORTAÇÃO DOS DADOS
+# IMPORTAÇÃO DOS DADOS
 
 arquivo = "raw/Base_Varejo.csv"
 
@@ -21,7 +22,7 @@ print("\nTipos de dados:")
 print(df.dtypes)
 
 
-# SPRINT 2 - IDENTIFICAÇÃO DE PROBLEMAS
+# IDENTIFICAÇÃO DE PROBLEMAS
 
 print("\nValores nulos por coluna:")
 print(df.isnull().sum())
@@ -39,7 +40,7 @@ colunas_vazias = [
 print("\nColunas totalmente vazias:")
 print(colunas_vazias)
 
-# SPRINT 3 - LIMPEZA DOS DADOS
+# LIMPEZA DOS DADOS
 
 # Remoção de colunas totalmente vazias
 
@@ -98,7 +99,7 @@ categorias_vazias = (
 
 print(f"\nCategorias vazias: {categorias_vazias}")
 
-# SPRINT 4 - ESTATÍSTICA DESCRITIVA
+#  ESTATÍSTICA DESCRITIVA
 
 print("\nColuna analisada: CL_FHL (Número de Filhos)")
 
@@ -148,6 +149,35 @@ print("\nArquivo df_limpo.csv gerado com sucesso.")
 
 print(f"Registros finais: {len(df)}")
 print(f"Colunas finais: {len(df.columns)}")
+
+# GRÁFICO - DISTRIBUIÇÃO DAS COMPRAS POR CATEGORIA
+
+top_categorias = (
+    df.groupby("PR_CAT")
+      .size()
+      .sort_values(ascending=False)
+)
+
+plt.figure(figsize=(10, 6))
+
+top_categorias.plot(kind="bar")
+
+plt.title("Distribuição das Compras por Categoria")
+plt.xlabel("Categoria")
+plt.ylabel("Quantidade de Compras")
+
+plt.xticks(rotation=45)
+
+plt.tight_layout()
+
+plt.savefig(
+    "grafico_categorias.png",
+    dpi=300,
+    bbox_inches="tight"
+)
+
+plt.show()
+
 
 
 
